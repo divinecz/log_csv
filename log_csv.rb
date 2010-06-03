@@ -36,7 +36,7 @@ end
 def process_log(file_path)
   puts "Processing '#{file_path}'..."
   File.open(file_path) do |file|
-    CSV.open(File.join(File.dirname(file_path), File.basename(file_path) + ".csv"), "w") do |writer|
+    CSV.open(File.join(File.dirname(file_path), File.basename(file_path) + ".csv"), "w", ";") do |writer|
       writer << @csv_definitions["columns"]
       while !file.eof? do
         line = file.readline
