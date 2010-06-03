@@ -1,0 +1,63 @@
+templates:
+  common_attributes: &common_attributes
+    name:
+      read: "0-15"
+      type: string
+    time_seconds:
+      read: "56"
+      type: bcd
+    time_minutes:
+      read: "57"
+      type: bcd
+    time_hours:
+      read: "58"
+      type: bcd
+    date_day:
+      read: "59"
+      type: bcd
+    date_week:
+      read: "60"
+      type: bcd
+    date_month:
+      read: "61"
+      type: bcd
+    date_year:
+      read: "62"
+      type: bcd
+    chip_serial_number:
+      read: "88-95"
+      type: uint
+    staff_number:
+      read: "120-121"
+      type: uint
+logs:
+  0x0000:
+    name: cash_desk_reader_logged_out
+    size: 512
+    attributes:
+      *common_attributes
+  0x0100:
+    name: cash_desk_reader_sale
+    size: 512
+    attributes:
+      *common_attributes
+  0x0200:
+    name: cash_desk_reader_write_to_chip
+    size: 512
+    attributes:
+      *common_attributes
+  0x0300:
+    name: cash_desk_reader_write_changes_to_chip
+    size: 512
+    attributes:
+      *common_attributes
+  0x0400:
+    name: cash_desk_reader_drawings_from_open_account
+    size: 512
+    attributes:
+      *common_attributes
+  0x0500:
+    name: cash_desk_unknown
+    size: 512
+    attributes:
+      *common_attributes
