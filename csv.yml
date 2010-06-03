@@ -1,0 +1,18 @@
+columns:
+  - log_name
+  - time_hours
+  - time_minutes
+  - time_seconds
+  - date_day
+  - date_week
+  - date_month
+  - date_year
+  - name
+  - box_id
+  - box_state
+  - box_locked
+  - chip_state_discount
+  - chip_state_borrowed
+  - chip_state_female
+  - chip_serial_number
+  - staff_number

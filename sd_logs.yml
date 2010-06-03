@@ -3,6 +3,24 @@ templates:
     name:
       read: "0-15"
       type: string
+    box_id:
+      read: "16-17"
+      type: uint
+    box_state:
+      read: "18"
+      type: uint
+    box_locked:
+      read: "20.7"
+      type: bool
+    chip_state_discount:
+      read: "19.0"
+      type: bool
+    chip_state_female:
+      read: "19.1"
+      type: bool
+    chip_state_borrowed:
+      read: "19.2"
+      type: bool
     time_seconds:
       read: "56"
       type: bcd
