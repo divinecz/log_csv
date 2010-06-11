@@ -64,9 +64,8 @@ def process_log(file_path)
         end
       end
     end
-    content = File.read(csv_file)
-    File.open(csv_file, "w") do |file|
-      file << "\xEF\xBB\xBF" + content
+    File.open(csv_file, "r+") do |file|
+      file << "\xEF\xBB\xBF" + file.read
     end
   end
 end
