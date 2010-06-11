@@ -55,7 +55,8 @@ Hodnota `type` v sekci atributu určuje datový typ. V současné době je možn
 
 * `bcd` (Binary Coded Decimal) je číslo, kde číslici určují vzdy 4 bity
 * `bool` hodnota true/false, kde true pokud je hodnota > 0
-* `string` řetězec
+* `hex` kladné celé číslo jako hexadecimální řetězec
+* `string` řetězec CP1250
 * `uint` kladné celé číslo
 
 Pro definici opakujících se částí lze využít YAML alias viz dokumentace YAML. V následující ukázce je využit alias `common_attributes`.
@@ -78,7 +79,11 @@ Ukázka:
 	    name: operation_2
 	    size: 512
 	    attributes:
-	      *common_attributes
+	      <<: *common_attributes
+	common_attributes: &common_attributes
+      name:
+        read: "0-15"
+        type: string
 
 Konfigurace CSV výstupu
 -----------------------

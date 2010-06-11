@@ -53,29 +53,29 @@ logs:
     name: cash_desk_reader_logged_out
     size: 512
     attributes:
-      *common_attributes
+      <<: *common_attributes
   0x0100:
     name: cash_desk_reader_sale
     size: 512
     attributes:
-      *common_attributes
+      <<: *common_attributes
   0x0200:
     name: cash_desk_reader_write_to_chip
     size: 512
     attributes:
-      *common_attributes
+      <<: *common_attributes
   0x0300:
     name: cash_desk_reader_write_changes_to_chip
     size: 512
     attributes:
-      *common_attributes
+      <<: *common_attributes
   0x0400:
     name: cash_desk_reader_drawings_from_open_account
     size: 512
     attributes:
-      *common_attributes
+      <<: *common_attributes
   0x0500:
     name: cash_desk_unknown
     size: 512
     attributes:
-      *common_attributes
+      <<: *common_attributes

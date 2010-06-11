@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 require "rubygems"
-gem "log_parser", "= 0.2.2"
+gem "log_parser", "= 0.2.3"
 # $:.unshift File.dirname($0) + "/../log_parser/lib"
 require "log_parser"
 require "optparse"
@@ -50,7 +50,8 @@ end
 def process_log(file_path)
   puts "Processing '#{file_path}'..."
   File.open(file_path) do |file|
-    CSV.open(File.join(File.dirname(file_path), File.basename(file_path) + ".csv"), "w", (RUBY_VERSION >= "1.9.0" ? { :col_sep => ";" } : ";")) do |writer|
+    csv_file = File.join(File.dirname(file_path), File.basename(file_path) + ".csv")
+    CSV.open(csv_file, "w", (RUBY_VERSION >= "1.9.0" ? { :col_sep => ";" } : ";")) do |writer|
       writer << @csv_definitions["columns"]
       while !file.eof? do
         line = file.readline
@@ -62,6 +63,10 @@ def process_log(file_path)
           writer << @csv_definitions["columns"].collect { |column| column == "log_name" ? log[:name] : log[:attributes][column.to_sym] }
         end
       end
+    end
+    content = File.read(csv_file)
+    File.open(csv_file, "w") do |file|
+      file << "\xEF\xBB\xBF" + content
     end
   end
 end
