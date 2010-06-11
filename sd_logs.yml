@@ -44,7 +44,7 @@ templates:
       type: bcd
     chip_serial_number:
       read: "88-95"
-      type: uint
+      type: hex
     staff_number:
       read: "120-121"
       type: uint
