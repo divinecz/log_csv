@@ -6,11 +6,12 @@ Skript Log CSV slouží pro zpracování SD logů zařízení a jejich transform
 Požadavky
 ---------
 * **Ruby** 1.8.7 nebo 1.9.x (Ruby 1.8.6 a starší nelze použít) a **RubyGems**
- * Instalace pro Linux s APT (Ubuntu, Debian):
+   * Instalace pro Linux s APT (Ubuntu, Debian):
 
 			apt-get install ruby rubygems
 
- * Instalace pro Wíndows: [http://rubyinstaller.org/](http://rubyinstaller.org/)
+   * Instalace pro Wíndows: [http://rubyinstaller.org/](http://rubyinstaller.org/)
+
 * Gem **Log Parser** v požadované verzi:
 
 		gem install log_parser-X.X.X.gem
