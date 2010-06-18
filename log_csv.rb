@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 require "rubygems"
-gem "log_parser", "= 0.2.3"
+gem "log_parser", "= 0.2.4"
 # $:.unshift File.dirname($0) + "/../log_parser/lib"
 require "log_parser"
 require "optparse"
@@ -73,9 +73,11 @@ end
 begin
   @sdlog_parser = LogParser::SDLogParser.new(SD_LOGS_PATH)
   @csv_definitions = load_csv_definitions
+  start = Time.now
   Dir[path].each do |file_path|
     process_log file_path
   end
+  puts "Total: #{Time.now - start}s"
 rescue LogParser::LogParserError => e
   puts "ERROR: " + e
   exit 1

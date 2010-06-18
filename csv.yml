@@ -1,5 +1,5 @@
 columns:
-  - log_name
+  # - log_name
   - time_hours
   - time_minutes
   - time_seconds
@@ -16,3 +16,38 @@ columns:
   - chip_state_female
   - chip_serial_number
   - staff_number
+  - loopA
+  - discountA
+  - univA
+  - creditA
+  - date_A_day
+  - date_A_mon
+  - date_A_year
+  - loopB
+  - discountB
+  - univB
+  - creditB
+  - date_B_day
+  - date_B_mon
+  - date_B_year
+  - loopC
+  - discountC
+  - univC
+  - creditC
+  - date_C_day
+  - date_C_mon
+  - date_C_year
+  - loopD
+  - discountD
+  - univD
+  - creditD
+  - date_D_day
+  - date_D_mon
+  - date_D_year
+  - loopE
+  - discountE
+  - univE
+  - creditE
+  - date_E_day
+  - date_E_mon
+  - date_E_year

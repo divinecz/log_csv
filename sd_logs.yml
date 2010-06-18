@@ -21,6 +21,111 @@ templates:
     chip_state_borrowed:
       read: "19.2"
       type: bool
+    loopA:
+      read: "40.0-40.4"
+      type: bcd
+    discountA:
+     read: "40.6"
+     type: bool
+    univA:
+     read: "40.7"
+     type: bool
+    creditA:
+     read: "96-97"
+     type: hex
+    date_A_day:
+     read: "98.0-98.4"
+     type: bcd
+    date_A_mon:
+     read: "98.5-99.0"
+     type: bcd
+    date_A_year:
+     read: "99.1-99.7"
+     type: bcd
+    loopB:
+      read: "41.0-41.4"
+      type: bcd
+    discountB:
+     read: "41.6"
+     type: bool
+    univB:
+     read: "41.7"
+     type: bool
+    creditB:
+     read: "128-129"
+     type: hex
+    date_B_day:
+     read: "130.0-130.4"
+     type: bcd
+    date_B_mon:
+     read: "130.5-131.0"
+     type: bcd
+    date_B_year:
+     read: "131.1-131.7"
+     type: bcd
+    loopC:
+      read: "42.0-42.4"
+      type: bcd
+    discountC:
+     read: "42.6"
+     type: bool
+    univC:
+     read: "42.7"
+     type: bool
+    creditC:
+     read: "160-161"
+     type: hex
+    date_C_day:
+     read: "162.0-162.4"
+     type: bcd
+    date_C_mon:
+     read: "162.5-163.0"
+     type: bcd
+    date_C_year:
+     read: "163.1-163.7"
+     type: bcd
+    loopD:
+      read: "43.0-43.4"
+      type: bcd
+    discountD:
+     read: "43.6"
+     type: bool
+    univD:
+     read: "43.7"
+     type: bool
+    creditD:
+     read: "192-193"
+     type: hex
+    date_D_day:
+     read: "194.0-194.4"
+     type: bcd
+    date_D_mon:
+     read: "194.5-195.0"
+     type: bcd
+    date_D_year:
+     read: "195.1-195.7"
+     type: bcd
+    loopE:
+      read: "44.0-44.4"
+      type: bcd
+    discountE:
+     read: "44.6"
+     type: bool
+    univE:
+     read: "44.7"
+     type: bool
+    creditE:
+     read: "224-225"
+     type: hex
+    date_E_day:
+     read: "226.0-226.4"
+     type: bcd
+    date_E_mon:
+     read: "226.5-227.0"
+     type: bcd
+    date_E_year:
+     read: "227.1-227.7"
+     type: bcd
     time_seconds:
       read: "56"
       type: bcd
