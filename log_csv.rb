@@ -60,7 +60,18 @@ def process_log(file_path)
         if hex_log
           binary_log = hex_log_to_binary_log(hex_log)
           log = @sdlog_parser.parse(binary_log)
-          writer << @csv_definitions["columns"].collect { |column| column == "log_name" ? log[:name] : log[:attributes][column.to_sym] }
+          writer << @csv_definitions["columns"].collect do |column|
+            if column == "log_name" 
+              log[:name]
+            else
+              value = log[:attributes][column.to_sym]
+              if @csv_definitions["dictionaries"][column]
+                @csv_definitions["dictionaries"][column][value] || value 
+              else
+                value
+              end
+            end
+          end
         end
       end
     end

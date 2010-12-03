@@ -1,3 +1,9 @@
+dictionaries:
+  box_state:
+    155: "status 155"
+    221: "status 221"
+    232: "status 232"
+  
 columns:
   # - log_name
   - time_hours
