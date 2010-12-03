@@ -96,7 +96,6 @@ Jednotlivé sloupce výstupu jsou definovány v sekci `columns` v pořadí, v ja
 Názvy sloupců odpovídají názvům atributů z definice logů.
 Speciálním názvem sloupce `log_name` dojde k vložení názvu logu z jeho definice.
 V případě, že analyzovaný log neobsahuje atribut se zadaným názvem, bude buňka výstupu ponechána prázdná.
-Ostatní sekce konfiguračního souboru jsou ignorovány.
 
 Ukázka:
 
@@ -106,3 +105,18 @@ Ukázka:
 	  - time_minutes
 	  - time_seconds
 	  - name
+	  - id
+
+Pro atributy jejichž hodnotu je třeba před výstupem do CSV souboru nejdříve přeložit je určena slovníková sekce `dictionaries`.
+Každý její záznam, který názvem odpovídá některému z atributů, obsahuje páry hodnot sloužící k překladu ve tvaru hodnota atributu a hodnota výstupu.
+Pokud není v sekci nalezena žádná odpovídající hodnota pro překlad, bude ve výstupu uvedena nepřeložená původní hodnota.
+V následující ukázce tedy pro atribut id bude pro hodnotu `0` a `1` použit ve výstupu překlad `on` a `off`.
+
+Ukázka:
+
+	dictionaries:
+	  id:
+	    0: off
+	    1: on
+
+Ostatní sekce konfiguračního souboru jsou ignorovány.

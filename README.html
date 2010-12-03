@@ -1,11 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
-	<head>
-		<meta name="Format" content="complete" />
-	</head>
-<body>
-<h1 id="logcsv">Log CSV</h1>
+<h1 id="log_csv">Log CSV</h1>
 
 <p>Skript Log CSV slouží pro zpracování SD logů zařízení a jejich transformaci do konfigurovalného CSV výstupu.</p>
 
@@ -41,7 +34,7 @@
 
 <p>Po spuštění budou vytvořeny CSV soubory v adresáři <code>PATH</code> se stejným názvem jako původní <code>*.log</code> soubory, ale s příponou <code>*.csv</code>.</p>
 
-<h2 id="konfiguracedefinicsdlog">Konfigurace definic SD logů</h2>
+<h2 id="konfigurace_definic_sd_log">Konfigurace definic SD logů</h2>
 
 <p>Pro konfiguraci definic SD logů je určen soubor <code>sd_logs.yml</code> v adresáři se skriptem ve formátu <a href="http://www.yaml.org/">YAML</a>.</p>
 
@@ -101,7 +94,7 @@ common_attributes: &amp;common_attributes
     type: string
 </code></pre>
 
-<h2 id="konfiguracecsvvstupu">Konfigurace CSV výstupu</h2>
+<h2 id="konfigurace_csv_vstupu">Konfigurace CSV výstupu</h2>
 
 <p>Pro konfiguraci CSV výstupu je určen soubor <code>csv.yml</code> v adresáři se skriptem ve formátu <a href="http://www.yaml.org/">YAML</a>.</p>
 
@@ -109,8 +102,7 @@ common_attributes: &amp;common_attributes
 
 <p>Názvy sloupců odpovídají názvům atributů z definice logů.
 Speciálním názvem sloupce <code>log_name</code> dojde k vložení názvu logu z jeho definice.
-V případě, že analyzovaný log neobsahuje atribut se zadaným názvem, bude buňka výstupu ponechána prázdná.
-Ostatní sekce konfiguračního souboru jsou ignorovány.</p>
+V případě, že analyzovaný log neobsahuje atribut se zadaným názvem, bude buňka výstupu ponechána prázdná.</p>
 
 <p>Ukázka:</p>
 
@@ -120,6 +112,20 @@ Ostatní sekce konfiguračního souboru jsou ignorovány.</p>
   - time_minutes
   - time_seconds
   - name
+  - id
 </code></pre>
-</body>
-</html>
+
+<p>Pro atributy jejichž hodnotu je třeba před výstupem do CSV souboru nejdříve přeložit je určena slovníková sekce <code>dictionaries</code>.
+Každý její záznam, který názvem odpovídá některému z atributů, obsahuje páry hodnot sloužící k překladu ve tvaru hodnota atributu a hodnota výstupu.
+Pokud není v sekci nalezena žádná odpovídající hodnota pro překlad, bude ve výstupu uvedena nepřeložená původní hodnota.
+V následující ukázce tedy pro atribut id bude pro hodnotu <code>0</code> a <code>1</code> použit ve výstupu překlad <code>on</code> a <code>off</code>.</p>
+
+<p>Ukázka:</p>
+
+<pre><code>dictionaries:
+  id:
+    0: off
+    1: on
+</code></pre>
+
+<p>Ostatní sekce konfiguračního souboru jsou ignorovány.</p>
