@@ -110,7 +110,7 @@ Ukázka:
 Pro atributy jejichž hodnotu je třeba před výstupem do CSV souboru nejdříve přeložit je určena slovníková sekce `dictionaries`.
 Každý její záznam, který názvem odpovídá některému z atributů, obsahuje páry hodnot sloužící k překladu ve tvaru hodnota atributu a hodnota výstupu.
 Pokud není v sekci nalezena žádná odpovídající hodnota pro překlad, bude ve výstupu uvedena nepřeložená původní hodnota.
-V následující ukázce tedy pro atribut id bude pro hodnotu `0` a `1` použit ve výstupu překlad `on` a `off`.
+V následující ukázce tedy pro atribut `id` bude pro hodnotu `0` a `1` použit ve výstupu překlad `on` a `off`.
 
 Ukázka:
 
