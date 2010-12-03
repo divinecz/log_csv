@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 require "rubygems"
-gem "log_parser", "= 0.2.4"
+gem "log_parser", "= 0.2.5"
 # $:.unshift File.dirname($0) + "/../log_parser/lib"
 require "log_parser"
 require "optparse"
@@ -65,7 +65,9 @@ def process_log(file_path)
       end
     end
     File.open(csv_file, "r+") do |file|
-      file << "\xEF\xBB\xBF" + file.read
+      content = file.read
+      file.rewind
+      file << "\xEF\xBB\xBF" + content
     end
   end
 end
